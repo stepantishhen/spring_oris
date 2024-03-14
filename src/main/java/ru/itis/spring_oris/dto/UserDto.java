@@ -17,15 +17,19 @@ import java.util.stream.Collectors;
 public class UserDto {
     private Long id;
     private String email;
+    private String firstname;
+    private String lastname;
 
     public static UserDto from(User user) {
         return UserDto.builder()
                 .id(user.getId())
                 .email(user.getEmail())
+                .firstname(user.getFirstName())
+                .lastname(user.getLastName())
                 .build();
     }
 
-    public static List<UserDto> from(List<User> users) {
+    public static List<UserDto> usersList(List<User> users) {
         return users.stream()
                 .map(UserDto::from)
                 .collect(Collectors.toList());

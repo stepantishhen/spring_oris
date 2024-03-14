@@ -7,7 +7,7 @@ import ru.itis.spring_oris.repositores.UsersRepository;
 
 import java.util.List;
 
-import static ru.itis.spring_oris.dto.UserDto.from;
+import static ru.itis.spring_oris.dto.UserDto.usersList;
 
 @Component
 public class UsersServiceImpl implements UsersService{
@@ -16,6 +16,6 @@ public class UsersServiceImpl implements UsersService{
     private UsersRepository usersRepository;
     @Override
     public List<UserDto> getAllUsers() {
-        return from(usersRepository.findAll());
+        return usersList(usersRepository.findAll());
     }
 }
